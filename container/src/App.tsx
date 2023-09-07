@@ -1,7 +1,8 @@
 import React, { ReactNode } from "react";
 import "./App.css";
 // import ErrorBoundary from "./ErrorBoundary";
-// const RemoteApp = React.lazy(() => import("Remote/App"));
+// @ts-ignore
+const RemoteApp = React.lazy(() => import("Remote/App"));
 // const RemoteButton = React.lazy(() => import("Remote/Button"));
 
 const RemoteWrapper: React.FC<{ children: ReactNode }> = ({ children }) => (
@@ -23,7 +24,7 @@ function App() {
         <h1>This is the Container!</h1>
         <h2>Remote App:</h2>
         <RemoteWrapper>
-          {/* <RemoteApp /> */}
+          <RemoteApp />
         </RemoteWrapper>
         <a href="http://localhost:4000">Link to Remote App</a>
       </div>
