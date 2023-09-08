@@ -41,7 +41,7 @@ const config: Configuration = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "Remote",
+      name: "Feature",
       filename: "moduleEntry.js",
       exposes: {
         "./App": "./src/App",

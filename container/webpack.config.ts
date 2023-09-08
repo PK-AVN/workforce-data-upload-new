@@ -45,9 +45,9 @@ const config: Configuration = {
     }),
     // Other development-specific plugins
     new ModuleFederationPlugin({
-      name: "Host",
+      name: "Container",
       remotes: {
-        Remote: `Remote@http://localhost:4000/moduleEntry.js`,
+        Feature: `Feature@http://localhost:4000/moduleEntry.js`,
       },
       shared: {
         // ...dependencies,

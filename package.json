@@ -5,18 +5,16 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "npm run start:container & npm run start:feature",
+    "start": "start npm run start:container && start npm run start:feature",
     "start:container": "cd ./container && npm start",
     "start:feature": "cd ./feature && npm start",
     "start:all": "yarn workspaces run start",
     "cleanup": "yarn workspaces run cleanup"
   },
-  "workspaces": {
-    "packages": [
-      "container",
-      "feature"
-    ]
-  },
+  "workspaces": [
+    "container",
+    "feature"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC"
