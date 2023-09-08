@@ -3,7 +3,6 @@ import "./App.css";
 // import ErrorBoundary from "./ErrorBoundary";
 // @ts-ignore
 const RemoteApp = React.lazy(() => import("Remote/App"));
-// const RemoteButton = React.lazy(() => import("Remote/Button"));
 
 const RemoteWrapper: React.FC<{ children: ReactNode }> = ({ children }) => (
   <div
