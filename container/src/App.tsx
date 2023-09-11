@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import "./App.css";
 // import ErrorBoundary from "./ErrorBoundary";
 // @ts-ignore
-const RemoteApp = React.lazy(() => import("Remote/App"));
+const RemoteApp = React.lazy(() => import("Feature/App"));
 
 const RemoteWrapper: React.FC<{ children: ReactNode }> = ({ children }) => (
   <div
@@ -11,6 +11,7 @@ const RemoteWrapper: React.FC<{ children: ReactNode }> = ({ children }) => (
       background: "white",
     }}
   >
+    {children}
     {/* <ErrorBoundary>{children}</ErrorBoundary> */}
   </div>
 );
