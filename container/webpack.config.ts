@@ -50,7 +50,7 @@ const config: Configuration = {
         Feature: `Feature@http://localhost:4000/moduleEntry.js`,
       },
       shared: {
-        // ...dependencies,
+        ...dependencies,
         react: {
           singleton: true,
           requiredVersion: dependencies["react"],
