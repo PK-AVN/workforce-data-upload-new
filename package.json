@@ -5,11 +5,10 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "start npm run start:container && start npm run start:feature",
+    "start": "npm-run-all -p \"start -w container\" \"start -w feature\"",
     "start:container": "cd ./container && npm start",
     "start:feature": "cd ./feature && npm start",
-    "start:all": "yarn workspaces run start",
-    "cleanup": "yarn workspaces run cleanup"
+    "lint-staged": "lint-staged"
   },
   "workspaces": [
     "container",
@@ -17,5 +16,16 @@
   ],
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "lint-staged": {
+    "*.{js,json,css,md,ts,tsx,html}": [
+      "npm run format --workspaces --if-present"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^8.48.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "npm-run-all": "^4.1.5"
+  }
 }

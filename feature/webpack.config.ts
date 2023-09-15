@@ -3,6 +3,7 @@ import ModuleFederationPlugin from "webpack/lib/container/ModuleFederationPlugin
 import { Configuration } from "webpack";
 import { dependencies } from "./package.json";
 import devServerConfig from "./webpack.devServer.config";
+import path from "path";
 
 const config: Configuration = {
   entry: "./src/index.tsx", // Adjust your entry point accordingly
@@ -47,7 +48,7 @@ const config: Configuration = {
         "./App": "./src/App",
       },
       shared: {
-        // ...dependencies,
+        ...dependencies,
         react: {
           singleton: true,
           requiredVersion: dependencies["react"],
@@ -63,6 +64,7 @@ const config: Configuration = {
     }),
   ],
   resolve: {
+    modules: [path.join(__dirname, 'src'), 'node_modules'],
     extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   target: "web",
