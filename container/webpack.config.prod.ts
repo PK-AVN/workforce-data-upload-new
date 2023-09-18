@@ -1,6 +1,7 @@
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { Configuration } from "webpack";
+import DotenvWebpackPlugin from "dotenv-webpack";
 
 const config: Configuration = {
   entry: "./src/index.tsx", // Adjust your entry point accordingly
@@ -17,6 +18,9 @@ const config: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+    }),
+    new DotenvWebpackPlugin({
+      path: "../.env.production",
     }),
     // Other production-specific plugins
   ],
