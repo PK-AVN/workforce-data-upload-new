@@ -1,5 +1,6 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ModuleFederationPlugin from "webpack/lib/container/ModuleFederationPlugin";
+import DotenvWebpackPlugin from "dotenv-webpack";
 import { Configuration } from "webpack";
 import { dependencies } from "./package.json";
 import devServerConfig from "./webpack.devServer.config";
@@ -42,6 +43,7 @@ const config: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      publicPath: "/",
     }),
     // Other development-specific plugins
     new ModuleFederationPlugin({
@@ -60,6 +62,9 @@ const config: Configuration = {
           requiredVersion: dependencies["react-dom"],
         },
       },
+    }),
+    new DotenvWebpackPlugin({
+      path: "../.env.development"
     }),
   ],
   resolve: {
