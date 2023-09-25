@@ -19,12 +19,14 @@ const Home = () => {
       <GeneratorTemplate
         columnLable={columnLable}
         title="Complete Data Template"
+        uploadType={FileUploadType.COMPLETE_UPLOAD}
       />
       <p>Changes Download</p>
 
       <GeneratorTemplate
         columnLable={columnLable}
         title="Changes Data Template"
+        uploadType={FileUploadType.CHANGE_UPLOAD}
       />
       <p>Complete Upload</p>
       <FileUpload

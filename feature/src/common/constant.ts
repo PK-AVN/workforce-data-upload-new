@@ -17,7 +17,6 @@ export const CompleteColumnLabelOptional = {
 
 export const ChangesColumnLabel = { Action: "Action" };
 
-
 export const FileUploadType = {
   COMPLETE_UPLOAD : "Complete",
   CHANGE_UPLOAD : "Change"
