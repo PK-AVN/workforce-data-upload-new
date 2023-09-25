@@ -8,6 +8,7 @@ import path from "path";
 const config: Configuration = {
   entry: "./src/index.tsx", // Adjust your entry point accordingly
   mode: "development",
+  devtool: 'source-map',
   devServer: devServerConfig,
   module: {
     // Your loaders for development here
