@@ -1,9 +1,9 @@
 import React from "react";
-import generateCSV from "../utils/generateCSV";
-import { ChangesColumnLabel, FileUploadType } from "../common/constant";
+import generateCSV from "../../utils/generateCSV";
+import { ChangesColumnLabel, FileUploadType } from "../../common/constant";
 
 type Props = {
-  columnLable: string[];
+  columnLabel: string[];
   title: string;
   uploadType: string;
 };
@@ -11,7 +11,7 @@ type Props = {
 const GeneratorTemplate = (props: Props) => {
   const moderatedCSVData = {
     fields: [
-      ...props.columnLable,
+      ...props.columnLabel,
       ...(props.uploadType === FileUploadType.CHANGE_UPLOAD
         ? [ChangesColumnLabel.Action]
         : []),
