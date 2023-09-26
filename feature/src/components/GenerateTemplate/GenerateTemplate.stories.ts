@@ -18,7 +18,7 @@ const manadatoryColumn = Object.keys(CompleteColumnLabel);
 
 export const Complete: Story = {
   args: {
-    columnLable: [...manadatoryColumn, "Unit", "EmployeeID", "City"],
+    columnLabel: [...manadatoryColumn, "Unit", "EmployeeID", "City"],
     title: "Complete Data Template",
     uploadType: "Complete",
   },
@@ -26,7 +26,7 @@ export const Complete: Story = {
 
 export const Change: Story = {
   args: {
-    columnLable: [...Complete.args.columnLable, "Action"],
+    columnLabel: [...Complete.args.columnLabel, "Action"],
     title: "Changes Data Template",
     uploadType: "Change",
   },

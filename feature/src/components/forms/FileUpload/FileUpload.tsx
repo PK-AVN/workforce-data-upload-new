@@ -5,7 +5,7 @@ import { TColumnLabel } from "../../../common/types";
 import defaultErrors from "../../../common/errorList";
 
 type Props = {
-  columnLable: string[];
+  columnLabel: string[];
   uploadType: string;
 };
 
@@ -30,7 +30,7 @@ const FileUpload = (props: Props) => {
         const errors = validateCSV(
           parsedData.data,
           props.uploadType,
-          props.columnLable
+          props.columnLabel
         );
         // setCSVData(parsedData.data);
         setValidationErrors(errors);
