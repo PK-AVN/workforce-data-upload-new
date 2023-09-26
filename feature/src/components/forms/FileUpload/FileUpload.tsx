@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import parseCSV from "../../utils/parseCSV";
-import validateCSV from "../../utils/validateCSV";
-import { TColumnLabel } from "../../common/types";
-import defaultErrors from "../../common/errorList";
+import parseCSV from "../../../utils/parseCSV";
+import validateCSV from "../../../utils/validateCSV";
+import { TColumnLabel } from "../../../common/types";
+import defaultErrors from "../../../common/errorList";
 
 type Props = {
   columnLable: string[];

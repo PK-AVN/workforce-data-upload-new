@@ -1,6 +1,6 @@
 import React from "react";
-import generateCSV from "../utils/generateCSV";
-import { ChangesColumnLabel, FileUploadType } from "../common/constant";
+import generateCSV from "../../utils/generateCSV";
+import { ChangesColumnLabel, FileUploadType } from "../../common/constant";
 
 type Props = {
   columnLable: string[];
