@@ -3,7 +3,7 @@ import MockAdapter from "axios-mock-adapter";
 
 const baseURL = "";
 
-const MockMode = false;
+const MockMode = process.env.REACT_APP_MOCK_API;
 
 const axiosInstance = axios.create({
   baseURL,
@@ -18,7 +18,6 @@ const axiosMockInstance = axios.create({
 export const mock = new MockAdapter(axiosMockInstance);
 
 if (MockMode) {
-  // TODO:: add env variable
   mock.onGet("http://localhost:4000/users").reply(200, {
     users: [{ id: 1, name: "John Smith" }],
   });

@@ -3,8 +3,7 @@ import * as API from "../apiConfig/api";
 
 const Home = () => {
   useEffect(() => {
-    getData();
-    // getMockedData();
+    process.env.REACT_APP_MOCK_API ? getMockedData() : getData();
   }, []);
 
   const getData = async () => {
