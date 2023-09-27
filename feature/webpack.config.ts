@@ -3,12 +3,13 @@ import ModuleFederationPlugin from "webpack/lib/container/ModuleFederationPlugin
 import { Configuration } from "webpack";
 import { dependencies } from "./package.json";
 import devServerConfig from "./webpack.devServer.config";
+import DotenvWebpackPlugin from "dotenv-webpack";
 import path from "path";
 
 const config: Configuration = {
   entry: "./src/index.tsx", // Adjust your entry point accordingly
   mode: "development",
-  devtool: 'source-map',
+  devtool: "source-map",
   devServer: devServerConfig,
   module: {
     // Your loaders for development here
@@ -63,9 +64,12 @@ const config: Configuration = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
+    new DotenvWebpackPlugin({
+      path: "../.env.development",
+    }),
   ],
   resolve: {
-    modules: [path.join(__dirname, 'src'), 'node_modules'],
+    modules: [path.join(__dirname, "src"), "node_modules"],
     extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   target: "web",
